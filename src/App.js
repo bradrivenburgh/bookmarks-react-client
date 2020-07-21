@@ -19,13 +19,24 @@ const bookmarks = [
     description:"No evil"
   }
 ];
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bookmarks: [],
+      showAddForm: false
+    };
+  }
+
   render() {
+    const page = this.state.showAddForm
+      ? <AddBookmark />
+      : <BookmarkApp bookmarks={this.state.bookmarks}/>
+
     return (
       <div className="App">
-        <AddBookmark />
-        <BookmarkApp bookmarks={bookmarks}/>
-        
+        { page }
       </div>
     );
   }
