@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AddBookmark from './addBookmark';
+import AddBookmark from './AddBookmark';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

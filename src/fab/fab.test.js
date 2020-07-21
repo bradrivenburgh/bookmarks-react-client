@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Fab from './fab';
+import Fab from './Fab';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

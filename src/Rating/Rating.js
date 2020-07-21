@@ -1,5 +1,5 @@
 import React from 'react';
-import './rating.css';
+import './Rating.css';
 
 export default function Rating(props) {
   const stars = [0,0,0,0,0]
