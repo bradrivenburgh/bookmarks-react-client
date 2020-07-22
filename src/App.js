@@ -5,21 +5,6 @@ import AddBookmark from './AddBookmark/AddBookmark';
 import BookmarkApp from './BookmarkApp/BookmarkApp';
 
 
-const bookmarks = [
-  {
-  title:"Google",
-  url:"http://www.google.com", 
-  rating:"3", 
-  description:"No evil"
-  },
-  {
-    title:"Google",
-    url:"http://www.google.com", 
-    rating:"3", 
-    description:"No evil"
-  }
-];
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -60,11 +45,18 @@ class App extends Component {
       });
   }
 
+  setShowAddForm(show) {
+    this.setState({
+      showAddForm: show
+    });
+  }
 
   render() {
     const page = this.state.showAddForm
-      ? <AddBookmark />
-      : <BookmarkApp bookmarks={this.state.bookmarks}/>
+      ? <AddBookmark showForm={show => this.setShowAddForm(show)}/>
+      : <BookmarkApp 
+        bookmarks={this.state.bookmarks}
+        showForm={show => this.setShowAddForm(show)}/>
 
     return (
       <div className="App">
